@@ -7,7 +7,7 @@ import {useGetCryptoQuery} from '../services/cryptoApi'
 
 
 
-const Crypocurrencies = ({simplified}) => {
+const Cryptocurrencies = ({simplified}) => {
     const count = simplified ? 10 : 50;
     const {data: cryptoList, isFetching} = useGetCryptoQuery(count);
     const [crypto, setCrypto] = useState([])
@@ -25,12 +25,15 @@ const Crypocurrencies = ({simplified}) => {
 
     return (
         <>
-        <div className="">
+        {!simplified && (
+            <div className="">
             <Input 
-            Placeholder="Search"
+            placeholder="Search"
             onChange={(e) => setSearch(e.target.value)}
             />
         </div>
+        )}
+        
         <Row gutters={[32,32]} className='crypto-card-container'>
             {crypto?.map((currency) =>(
                 <Col xs={24} sm={12} lg={6} className='crypto-card' key={currency.id}>
@@ -53,4 +56,4 @@ const Crypocurrencies = ({simplified}) => {
     )
 }
 
-export default Crypocurrencies
+export default Cryptocurrencies

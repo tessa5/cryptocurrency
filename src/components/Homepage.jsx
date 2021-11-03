@@ -18,7 +18,7 @@ const Homepage = () => {
         <Title level={2} className='heading'>Global Crypto Stats</Title>
         <Row>
             <Col span={12}><Statistic title='Total Crypto' value={globalStat.total} /></Col>
-            <Col span={12}><Statistic title='Total Exchanges' value={globalStat.exchanges}/></Col>
+            <Col span={12}><Statistic title='Total Exchanges' value={globalStat.totalExchanges}/></Col>
             <Col span={12}><Statistic title='Total 24h Volume' value={millify(globalStat.total24hVolume)}/></Col>
             <Col span={12}><Statistic title='Total Market Cap' value={millify(globalStat.totalMarketCap)}/></Col>
             <Col span={12}><Statistic title='Total Markets' value={millify(globalStat.totalMarkets)}/></Col>
